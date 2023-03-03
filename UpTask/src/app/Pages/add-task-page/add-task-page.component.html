@@ -1,0 +1,90 @@
+<div class="container">
+  <app-reminder-alerts [remainingTasks]="noTodayTasks"></app-reminder-alerts>
+  <app-navigation-bar></app-navigation-bar>
+  <div class="greater-container">
+    <div class="first-container">
+      <div class="second-container">
+        <div class="content-container">
+          <form
+            id="add-task-form"
+            [formGroup]="addTaskForm"
+            (ngSubmit)="addTask()"
+          >
+            <div class="left-section">
+              <div class="field">
+                <div class="title">
+                  <div class="image">
+                    <img src="../../../assets/icons/title-icon.png" />
+                  </div>
+                  <span>Name</span>
+                </div>
+                <input
+                  class="name-input"
+                  maxlength="20"
+                  formControlName="taskName"
+                  placeholder="Write here..."
+                />
+              </div>
+
+              <div class="field">
+                <div class="title">
+                  <div class="image">
+                    <img src="../../../assets/icons/info-icon.png" />
+                  </div>
+                  <span>Description</span>
+                </div>
+                <textarea
+                  formControlName="taskDescription"
+                  placeholder="Write here..."
+                  rows="4"
+                  cols="50"
+                  class="text-area"
+                ></textarea>
+              </div>
+            </div>
+            <div class="right-section">
+              <div class="field">
+                <div class="title">
+                  <div class="image">
+                    <img src="../../../assets/icons/label-icon.png" />
+                  </div>
+                  <span>Label</span>
+                </div>
+                <select class="label-input" formControlName="label">
+                  <option value="" disabled selected hidden>Label</option>
+                  <option value="school" *ngIf="profileRole=='student'">School</option>
+                  <option value="school" *ngIf="profileRole=='professor'">Grading</option>
+                  <option value="work">Work</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <div class="title">
+                  <div class="image">
+                    <img src="../../../assets/icons/date-icon.png" />
+                  </div>
+                  <span>Date</span>
+                </div>
+                <div class="date">
+                  <input
+                    formControlName="taskDeadline"
+                    matInput
+                    [matDatepicker]="picker"
+                    placeholder="Date"
+                  />
+                  <mat-datepicker-toggle
+                    matIconSuffix
+                    [for]="picker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </div>
+              </div>
+              <button class="save-task-btn" type="submit">Save Task</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

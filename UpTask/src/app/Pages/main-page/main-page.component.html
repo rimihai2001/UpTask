@@ -1,0 +1,646 @@
+<div class="container">
+  <app-reminder-alerts [remainingTasks]="noTasksSchool"></app-reminder-alerts>
+  <app-navigation-bar></app-navigation-bar>
+  <div class="lists-container" *ngIf="!editMode && !viewMode">
+    <div class="lists">
+      <div class="task-list">
+        <!-- School!!!!!!!!!!!!! -->
+        <p class="title school" *ngIf="profileRole=='student'">School</p>
+        <p class="title" *ngIf="profileRole=='professor'">Grading</p>
+        <div class="task-container">
+          <!-- red -->
+          <div *ngFor="let task of sortedTasks">
+            <div
+              class="task-card"
+              *ngIf="
+                task.label == 'school' &&
+                !notExpired(task.expiration_date) &&
+                !task.completed
+              "
+            >
+              <p class="task-name red">{{ task.name }}</p>
+
+              <div class="second-row">
+                <span class="due-date red"
+                  >Due date:
+                  <span class="date-color red">{{
+                    task.expiration_date
+                  }}</span></span
+                >
+                <img
+                  (click)="goToViewMode(task)"
+                  class="eye-icon"
+                  style="cursor: pointer"
+                  src="../../../assets/icons/eye-icon.png"
+                />
+              </div>
+              <div class="task-buttons">
+                <button
+                  class="completed-button"
+                  *ngIf="!task.completed"
+                  (click)="MarkCompleted(task)"
+                >
+                  Completed
+                  <img src="../../../assets/icons/done-icon.png" />
+                </button>
+                <button
+                  class="unfinished-button"
+                  *ngIf="task.completed"
+                  (click)="MarkNotCompleted(task)"
+                >
+                  Unfinished
+                  <img src="../../../assets/icons/x-icon.png" />
+                </button>
+                <button class="delete-button" (click)="DeleteTask(task)">
+                  Delete <img src="../../../assets/icons/bin-icon.png" />
+                </button>
+              </div>
+            </div>
+            <!-- green -->
+            <div
+              class="task-card"
+              *ngIf="
+                task.label == 'school' &&
+                notExpired(task.expiration_date) &&
+                task.completed
+              "
+            >
+              <p class="task-name green">{{ task.name }}</p>
+              <div class="second-row">
+                <span class="due-date green"
+                  >Due date:
+                  <span class="date-color green">{{
+                    task.expiration_date
+                  }}</span></span
+                >
+                <img
+                  (click)="goToViewMode(task)"
+                  class="eye-icon"
+                  style="cursor: pointer"
+                  src="../../../assets/icons/eye-icon.png"
+                />
+              </div>
+              <div class="task-buttons">
+                <button
+                  class="completed-button"
+                  *ngIf="!task.completed"
+                  (click)="MarkCompleted(task)"
+                >
+                  <img src="../../../assets/icons/done-icon.png" />
+                  Completed
+                </button>
+                <button
+                  class="unfinished-button"
+                  *ngIf="task.completed"
+                  (click)="MarkNotCompleted(task)"
+                >
+                  <img src="../../../assets/icons/x-icon.png" />
+                  Unfinished
+                </button>
+                <button class="delete-button" (click)="DeleteTask(task)">
+                  <img src="../../../assets/icons/bin-icon.png" />
+                  Delete
+                </button>
+              </div>
+            </div>
+            <div
+              class="task-card"
+              *ngIf="
+                task.label == 'school' &&
+                notExpired(task.expiration_date) &&
+                !task.completed
+              "
+            >
+              <p class="task-name">{{ task.name }}</p>
+              <div class="second-row">
+                <span class="due-date"
+                  >Due date:
+                  <span class="date-color">{{
+                    task.expiration_date
+                  }}</span></span
+                >
+                <img
+                  (click)="goToViewMode(task)"
+                  class="eye-icon"
+                  style="cursor: pointer"
+                  src="../../../assets/icons/eye-icon.png"
+                />
+              </div>
+              <div class="task-buttons">
+                <button
+                  class="completed-button"
+                  *ngIf="!task.completed"
+                  (click)="MarkCompleted(task)"
+                >
+                  <img src="../../../assets/icons/done-icon.png" />
+                  Completed
+                </button>
+                <button
+                  class="unfinished-button"
+                  *ngIf="task.completed"
+                  (click)="MarkNotCompleted(task)"
+                >
+                  <img src="../../../assets/icons/x-icon.png" />
+                  Unfinished
+                </button>
+                <button class="delete-button" (click)="DeleteTask(task)">
+                  <img src="../../../assets/icons/bin-icon.png" />
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            *ngIf="noTasksSchool == 0"
+            class="no-tasks-text school-zero-tasks"
+          >
+            Looks like you finished all your tasks for school. Do you want to
+            add another one?
+            <img
+              (click)="goToAddTask()"
+              src="../../../assets/icons/plus-icon.png"
+              class="add-icon school-task-button"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="task-list">
+        <!-- Work!!!!!!!!!!!!! -->
+        <p class="title work">Work</p>
+        <div class="task-container">
+          <div *ngFor="let task of sortedTasks">
+            <div
+              class="task-card"
+              *ngIf="
+                task.label == 'work' &&
+                !notExpired(task.expiration_date) &&
+                !task.completed
+              "
+            >
+              <p class="task-name red">{{ task.name }}</p>
+              <div class="second-row">
+                <span class="due-date red"
+                  >Due date:
+                  <span class="date-color red">{{
+                    task.expiration_date
+                  }}</span></span
+                >
+                <img
+                  (click)="goToViewMode(task)"
+                  class="eye-icon"
+                  style="cursor: pointer"
+                  src="../../../assets/icons/eye-icon.png"
+                />
+              </div>
+              <div class="task-buttons">
+                <button
+                  class="completed-button"
+                  *ngIf="!task.completed"
+                  (click)="MarkCompleted(task)"
+                >
+                  <img src="../../../assets/icons/done-icon.png" />
+                  Completed
+                </button>
+                <button
+                  class="unfinished-button"
+                  *ngIf="task.completed"
+                  (click)="MarkNotCompleted(task)"
+                >
+                  <img src="../../../assets/icons/x-icon.png" />
+                  Unfinished
+                </button>
+                <button class="delete-button" (click)="DeleteTask(task)">
+                  <img src="../../../assets/icons/bin-icon.png" />
+                  Delete
+                </button>
+              </div>
+            </div>
+            <!-- completed -->
+            <div
+              class="task-card"
+              *ngIf="
+                task.label == 'work' &&
+                notExpired(task.expiration_date) &&
+                task.completed
+              "
+            >
+              <p class="task-name green">{{ task.name }}</p>
+              <div class="second-row green">
+                <span class="due-date green"
+                  >Due date:
+                  <span class="date-color green">{{
+                    task.expiration_date
+                  }}</span></span
+                >
+                <img
+                  (click)="goToViewMode(task)"
+                  class="eye-icon"
+                  style="cursor: pointer"
+                  src="../../../assets/icons/eye-icon.png"
+                />
+              </div>
+
+              <div class="task-buttons">
+                <button
+                  class="completed-button"
+                  *ngIf="!task.completed"
+                  (click)="MarkCompleted(task)"
+                >
+                  <img src="../../../assets/icons/done-icon.png" />
+                  Completed
+                </button>
+                <button
+                  class="unfinished-button"
+                  *ngIf="task.completed"
+                  (click)="MarkNotCompleted(task)"
+                >
+                  <img src="../../../assets/icons/x-icon.png" />
+                  Unfinished
+                </button>
+                <button class="delete-button" (click)="DeleteTask(task)">
+                  <img src="../../../assets/icons/bin-icon.png" />
+                  Delete
+                </button>
+              </div>
+            </div>
+            <div
+              class="task-card"
+              *ngIf="
+                task.label == 'work' &&
+                notExpired(task.expiration_date) &&
+                !task.completed
+              "
+            >
+              <p class="task-name">{{ task.name }}</p>
+              <div class="second-row">
+                <span class="due-date"
+                  >Due date:
+                  <span class="date-color">{{
+                    task.expiration_date
+                  }}</span></span
+                >
+                <img
+                  (click)="goToViewMode(task)"
+                  class="eye-icon"
+                  style="cursor: pointer"
+                  src="../../../assets/icons/eye-icon.png"
+                />
+              </div>
+              <div class="task-buttons">
+                <button
+                  class="completed-button"
+                  *ngIf="!task.completed"
+                  (click)="MarkCompleted(task)"
+                >
+                  <img src="../../../assets/icons/done-icon.png" />
+                  Completed
+                </button>
+                <button
+                  class="unfinished-button"
+                  *ngIf="task.completed"
+                  (click)="MarkNotCompleted(task)"
+                >
+                  <img src="../../../assets/icons/x-icon.png" />
+                  Unfinished
+                </button>
+                <button class="delete-button" (click)="DeleteTask(task)">
+                  <img src="../../../assets/icons/bin-icon.png" />Delete
+                </button>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="noTasksWork == 0" class="no-tasks-text work-zero-tasks">
+            Looks like you finished all your tasks for work. Do you want to add
+            another one?
+            <img
+              (click)="goToAddTask()"
+              src="../../../assets/icons/plus-icon.png"
+              class="add-icon work-task-button"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="task-list">
+        <!-- Other!!!!!!!!!!!!! -->
+        <p class="title other">Other</p>
+        <div class="task-container">
+          <div *ngFor="let task of sortedTasks">
+            <!-- red -->
+            <div
+              class="task-card"
+              *ngIf="
+                task.label == 'other' &&
+                !notExpired(task.expiration_date) &&
+                !task.completed
+              "
+            >
+              <p class="task-name red">{{ task.name }}</p>
+              <div class="second-row">
+                <span class="due-date red"
+                  >Due date:
+                  <span class="date-color red">{{
+                    task.expiration_date
+                  }}</span></span
+                >
+                <img
+                  (click)="goToViewMode(task)"
+                  class="eye-icon"
+                  style="cursor: pointer"
+                  src="../../../assets/icons/eye-icon.png"
+                />
+              </div>
+              <div class="task-buttons">
+                <button
+                  class="completed-button"
+                  *ngIf="!task.completed"
+                  (click)="MarkCompleted(task)"
+                >
+                  <img src="../../../assets/icons/done-icon.png" />
+                  Completed
+                </button>
+                <button
+                  class="unfinished-button"
+                  *ngIf="task.completed"
+                  (click)="MarkNotCompleted(task)"
+                >
+                  <img src="../../../assets/icons/x-icon.png" />
+                  Unfinished
+                </button>
+                <button class="delete-button" (click)="DeleteTask(task)">
+                  <img src="../../../assets/icons/bin-icon.png" />
+                  Delete
+                </button>
+              </div>
+            </div>
+            <!-- green -->
+            <div
+              class="task-card"
+              *ngIf="
+                task.label == 'other' &&
+                notExpired(task.expiration_date) &&
+                task.completed
+              "
+            >
+              <p class="task-name green">{{ task.name }}</p>
+              <div class="second-row">
+                <span class="due-date green"
+                  >Due date:
+                  <span class="date-color green">{{
+                    task.expiration_date
+                  }}</span></span
+                >
+                <img
+                  (click)="goToViewMode(task)"
+                  class="eye-icon"
+                  style="cursor: pointer"
+                  src="../../../assets/icons/eye-icon.png"
+                />
+              </div>
+              <div class="task-buttons">
+                <button
+                  class="completed-button"
+                  *ngIf="!task.completed"
+                  (click)="MarkCompleted(task)"
+                >
+                  <img src="../../../assets/icons/done-icon.png" />
+                  Completed
+                </button>
+                <button
+                  class="unfinished-button"
+                  *ngIf="task.completed"
+                  (click)="MarkNotCompleted(task)"
+                >
+                  <img src="../../../assets/icons/x-icon.png" />
+                  Unfinished
+                </button>
+                <button class="delete-button" (click)="DeleteTask(task)">
+                  <img src="../../../assets/icons/bin-icon.png" />
+                  Delete
+                </button>
+              </div>
+            </div>
+            <div
+              class="task-card"
+              *ngIf="
+                task.label == 'other' &&
+                notExpired(task.expiration_date) &&
+                !task.completed
+              "
+            >
+              <p class="task-name">{{ task.name }}</p>
+
+              <div class="second-row">
+                <span class="due-date"
+                  >Due date:
+                  <span class="date-color">{{
+                    task.expiration_date
+                  }}</span></span
+                >
+                <img
+                  (click)="goToViewMode(task)"
+                  class="eye-icon"
+                  style="cursor: pointer"
+                  src="../../../assets/icons/eye-icon.png"
+                />
+              </div>
+              <div class="task-buttons">
+                <button
+                  class="completed-button"
+                  *ngIf="!task.completed"
+                  (click)="MarkCompleted(task)"
+                >
+                  <img src="../../../assets/icons/done-icon.png" />
+                  Completed
+                </button>
+                <button
+                  class="unfinished-button"
+                  *ngIf="task.completed"
+                  (click)="MarkNotCompleted(task)"
+                >
+                  <img src="../../../assets/icons/x-icon.png" />
+                  Unfinished
+                </button>
+                <button class="delete-button" (click)="DeleteTask(task)">
+                  <img src="../../../assets/icons/bin-icon.png" />
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="noTasksOther == 0" class="no-tasks-text other-zero-tasks">
+            Looks like you finished all your tasks for other activities. Do you
+            want to add another one?
+            <img
+              (click)="goToAddTask()"
+              src="../../../assets/icons/plus-icon.png"
+              class="add-icon other-task-button"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- View Task Details -->
+  <div class="view-container" *ngIf="viewMode">
+    <div class="first-container">
+      <div class="second-container">
+        <div class="content-container">
+          <div class="left-section">
+            <div class="field">
+              <div class="view-title">
+                <div class="image">
+                  <img src="../../../assets/icons/title-icon.png" />
+                </div>
+                <span class="title-text">Name</span>
+              </div>
+              <p class="task-data name">{{ viewTask.name }}</p>
+            </div>
+
+            <div class="field">
+              <div class="view-title">
+                <div class="image">
+                  <img src="../../../assets/icons/info-icon.png" />
+                </div>
+                <span class="title-text">Description</span>
+              </div>
+
+              <textarea rows="4" cols="50" readonly>{{
+                viewTask.description
+              }}</textarea>
+            </div>
+          </div>
+          <div class="right-section">
+            <div class="field">
+              <div class="view-title">
+                <div class="image">
+                  <img src="../../../assets/icons/label-icon.png" />
+                </div>
+                <span class="title-text">Label</span>
+              </div>
+              <p class="task-data">{{ viewTask.label }}</p>
+            </div>
+
+            <div class="field">
+              <div class="view-title">
+                <div class="image">
+                  <img src="../../../assets/icons/date-icon.png" />
+                </div>
+                <span class="title-text">Date</span>
+              </div>
+              <div class="date">
+                <p class="task-data">{{ viewTask.expiration_date }}</p>
+              </div>
+            </div>
+            <div class="view-buttons-container">
+              <button class="first-button" (click)="goEditMode()">
+                <img src="../../../assets/icons/edit-icon.png" />
+                Edit
+              </button>
+              <button class="second-button" (click)="returnMainPage()">
+                Back
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Edit Task Details -->
+  <div class="edit-container" *ngIf="editMode">
+    <div class="first-container">
+      <div class="second-container">
+        <div>
+          <form
+            class="content-container"
+            id="edit-task-form"
+            [formGroup]="editTaskForm"
+            (ngSubmit)="editTask(task)"
+          >
+            <div class="left-section">
+              <!-- field for task title -->
+              <div class="field">
+                <div class="view-title">
+                  <div class="image">
+                    <img src="../../../assets/icons/title-icon.png" />
+                  </div>
+                  <span class="title-text">Name</span>
+                </div>
+                <input
+                  maxlength="20"
+                  class="edit-input"
+                  formControlName="taskName"
+                  placeholder="Write here..."
+                />
+              </div>
+              <!-- field for task description -->
+              <div class="field">
+                <div class="view-title">
+                  <div class="image">
+                    <img src="../../../assets/icons/info-icon.png" />
+                  </div>
+                  <span class="title-text">Description</span>
+                </div>
+                <textarea
+                  formControlName="taskDescription"
+                  placeholder="Write here..."
+                  rows="4"
+                  cols="50"
+                  class="text-area"
+                  >{{ viewTask.description }}</textarea
+                >
+              </div>
+            </div>
+            <div class="right-section">
+              <!-- field for task label -->
+              <div class="field">
+                <div class="view-title">
+                  <div class="image">
+                    <img src="../../../assets/icons/label-icon.png" />
+                  </div>
+                  <span class="title-text">Label</span>
+                </div>
+                <select class="edit-input" formControlName="label">
+                  <option value="" disabled selected hidden>Label</option>
+                  <option value="school">School</option>
+                  <option value="work">Work</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <!-- field for due date -->
+              <div class="field">
+                <div class="view-title">
+                  <div class="image">
+                    <img src="../../../assets/icons/date-icon.png" />
+                  </div>
+                  <span class="title-text">Date</span>
+                </div>
+                <div class="date">
+                  <input
+                    class="edit-input"
+                    matInput
+                    [matDatepicker]="picker"
+                    formControlName="taskDeadline"
+                    placeholder="Date"
+                  />
+                  <mat-datepicker-toggle
+                    matIconSuffix
+                    [for]="picker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </div>
+              </div>
+              <div class="view-buttons-container margin">
+                <button type="submit" class="first-button">Save</button>
+                <button class="second-button" (click)="returnViewMode()">
+                  Back
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "uptask-nobugs4us": {
+      "hosting": {
+        "UpTask": [
+          "uptask-nobugs4us"
+        ]
+      }
+    }
+  }
+}

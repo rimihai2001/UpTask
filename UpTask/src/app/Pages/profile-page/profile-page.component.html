@@ -1,0 +1,45 @@
+<div class="container">
+  <app-navigation-bar></app-navigation-bar>
+  <div class="first-container">
+    <div class="second-container">
+      <div class="content-container">
+        <div class="avatar-container">
+          <img src="{{ avatarURL }}" class="avatar" />
+          <p class="full-name">{{ profileName }}</p>
+        </div>
+        <div class="info-container">
+          <div class="details-container">
+            <div class="field">
+              <div class="view-title">
+                <div class="image">
+                  <img src="../../../assets/icons/email-icon.png" />
+                </div>
+                <span class="title-text ">Email</span>
+              </div>
+              <p class="task-data name profile-email">{{ profileEmail }}</p>
+            </div>
+            <div class="field">
+              <div class="view-title">
+                <div class="image">
+                  <img src="../../../assets/icons/role-icon.png" />
+                </div>
+                <span class="title-text">Role</span>
+              </div>
+              <p class="task-data name profile-role">{{ profileRole }}</p>
+            </div>
+          </div>
+          <div class="buttons-container">
+            <button (click)="switchToEdit()" class="edit-profile-btn">
+              <img src="../../../assets/icons/edit-icon.png" class="icon" />
+              Edit
+            </button>
+            <button (click)="goToMainPage()" class="s-out-btn">
+              <img src="../../../assets/icons/exit-icon.png" class="icon" />
+              Back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

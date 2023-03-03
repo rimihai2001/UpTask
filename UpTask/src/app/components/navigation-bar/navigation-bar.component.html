@@ -1,0 +1,42 @@
+<div class="navbar">
+  <app-random-message class="random-message"></app-random-message>
+  <ul class="container">
+    <li class="nav-item" id="item-1">
+      <a
+        class="nav-link go-to-main-page-navbar"
+        routerLinkActive="active"
+        [routerLink]="['/main']"
+        (click)="goToMainPage()"
+        >Main Page</a
+      >
+      <hr />
+    </li>
+
+    <li class="nav-item" id="item-2">
+      <a
+        class="nav-link go-to-today-tasks-navbar"
+        routerLinkActive="active"
+        [routerLink]="['/today']"
+        (click)="goToTodaysTasks()"
+        >Today's Tasks</a
+      >
+      <hr />
+    </li>
+    <li class="nav-item" id="item-3">
+      <a
+        class="nav-link add-task-navbar"
+        routerLinkActive="active"
+        [routerLink]="['/add']"
+        (click)="goToAddTasksPage()"
+        >Add Task</a
+      >
+      <hr />
+    </li>
+    <li class="nav-item" id="item-4">
+      <button class="logout" (click)="logout()">Log out</button>
+    </li>
+    <li class="nav-item" id="item-5">
+      <img src="{{ avatarURL }}" class="avatar" (click)="goToProfilePage()" />
+    </li>
+  </ul>
+</div>

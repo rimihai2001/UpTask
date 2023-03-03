@@ -1,0 +1,30 @@
+<div class="container">
+  <img class="logo-image" src="../../../assets/images/logo.png" />
+  <form id="signup-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <input placeholder="Name" formControlName="name" class="name-input" />
+    <input placeholder="Email" type="email" formControlName="email" />
+    <input
+      placeholder="Password"
+      type="password"
+      formControlName="password"
+      minlength="6"
+    />
+    <select formControlName="role">
+      <option value="" disabled selected hidden>Role</option>
+      <option value="student">Student</option>
+      <option value="professor">Professor</option>
+    </select>
+    <div *ngIf="isLoading">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <button type="submit" *ngIf="!isLoading" class="sgn-btn">Sign me up</button>
+    <p *ngIf="displayValidationMessage" class="validation-message red-text">
+      Please fill out all the fields!
+    </p>
+  </form>
+
+  <p>
+    Already a member?
+    <span class="link-text" (click)="switchToLogin()">Log in</span>
+  </p>
+</div>

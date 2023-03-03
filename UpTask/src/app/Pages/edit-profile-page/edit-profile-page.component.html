@@ -1,0 +1,57 @@
+<div class="container">
+  <app-navigation-bar></app-navigation-bar>
+  <div class="first-container">
+    <div class="second-container">
+      <div class="content-container">
+        <div class="avatar-container">
+          <img src="{{ avatarURL }}" class="avatar" />
+          <p class="full-name">{{ profileName }}</p>
+        </div>
+        <div class="info-container">
+          <form
+            id="edit-profile-form"
+            [formGroup]="editForm"
+            (ngSubmit)="editProfile()"
+          >
+            <div class="details-container">
+              <div class="field">
+                <div class="view-title">
+                  <div class="image">
+                    <img src="../../../assets/icons/title-icon.png" />
+                  </div>
+                  <span class="title-text">Name</span>
+                </div>
+                <input
+                  placeholder="Name"
+                  formControlName="name"
+                  class="name-input"
+                />
+              </div>
+              <div class="field">
+                <div class="view-title">
+                  <div class="image">
+                    <img src="../../../assets/icons/role-icon.png" />
+                  </div>
+                  <span class="title-text">Role</span>
+                </div>
+                <select formControlName="role" class="role-select">
+                  <option value="" disabled selected hidden>Role</option>
+                  <option value="student">Student</option>
+                  <option value="professor">Professor</option>
+                </select>
+              </div>
+            </div>
+            <div class="buttons-container">
+              <button class="edit-profile-btn save-profile-btn" type="submit">
+                Save
+              </button>
+              <button routerLink="../" class="s-out-btn cancel-edit-btn">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

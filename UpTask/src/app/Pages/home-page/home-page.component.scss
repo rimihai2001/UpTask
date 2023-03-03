@@ -1,0 +1,102 @@
+@import "../../../styles/global-colors";
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Space+Mono&display=swap");
+
+.first-section {
+  background: url("../../../assets/images/main-page-background.jpg") no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Mono", monospace;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.title {
+  font-size: 6rem;
+  animation: 1.5s ease-out 0s 1 firstRender;
+  height: auto;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  animation: 2s ease-out 0s 1 firstRender;
+  width: 60%;
+  text-align: center;
+}
+
+.buttons-container {
+  margin-top: 5rem;
+  animation: 1s ease-out 0s 1 firstRender;
+  padding-bottom: 3%;
+}
+
+button {
+  background-color: $color-purple;
+  width: 20rem;
+  border: none;
+  border-radius: 10px;
+  color: $color-white;
+  height: 4rem;
+  transition: 0.7s;
+  cursor: pointer;
+  font-family: "Space Mono", monospace;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: $color-light-purple;
+}
+
+.or-text {
+  padding: 0 2rem 0 2rem;
+  font-size: 2.5rem;
+}
+
+@keyframes firstRender {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 760px) {
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .title {
+    margin-top: 3.5rem;
+    font-size: 4rem;
+  }
+  .subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .buttons-container {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .title {
+    margin-top: 4rem;
+    font-size: 4rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+}
