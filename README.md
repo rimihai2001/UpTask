@@ -43,7 +43,7 @@ Now that we live in the digital era, tracking tasks can finally become a lot eas
 
 ## **Functional Decomposition**
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Functional_Decomposition.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Functional_Decomposition.png)
 
 ## **Non-functional Requirements List**
 
@@ -82,7 +82,7 @@ _**Integrity:**_
 
 ## **Activity/State Diagram**
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/UML_Diagram.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/UML_Diagram.png)
 
 ## **Prioritized Product Backlog**
 
@@ -146,21 +146,21 @@ _**Integrity:**_
 **Sprints**
 - [Sprint 1](https://github.com/orgs/inginerie-software-22-23/projects/64)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Backlog_Sprint1.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Backlog_Sprint1.png)
 
 - [Sprint 2](https://github.com/orgs/inginerie-software-22-23/projects/65)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Backlog_Sprint2.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Backlog_Sprint2.png)
 
 - [Sprint 3](https://github.com/orgs/inginerie-software-22-23/projects/66)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Backlog_Sprint3.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Backlog_Sprint3.png)
 
 - [Sprint 4](https://github.com/orgs/inginerie-software-22-23/projects/142): [Demo](https://drive.google.com/file/d/1MKUeyXqkuPF3muF3vL4qKRVZHTZCdmKS/view) + [Code](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/tree/2b92f0864a9a078c42e17369e0c299b21873f0a7)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/CapacityPlanner_Sprint4.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/CapacityPlanner_Sprint4.png)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Backlog_Sprint4.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Backlog_Sprint4.png)
 
 *Dates of sprint*: 12.12.2022 - 25.12.2022
 
@@ -183,7 +183,7 @@ _**Integrity:**_
 
 *Burndown chart:*
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/BurndownChart_Sprint4.jpg)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/BurndownChart_Sprint4.jpg)
 
 *Retrospective Outcome*:
 
@@ -201,9 +201,9 @@ What we commit to improve in the next sprint is dividing the tasks into sprints 
 
 - [Sprint 5](https://github.com/orgs/inginerie-software-22-23/projects/154): [Demo](https://drive.google.com/file/d/1hcAQqWHvIja5jO3Uoe0bnF734I-28aCK/view) + [Code](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/tree/616c94d64dffaf9c8d42f30cd25c789d178175b7)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/CapacityPlanner_Sprint5.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/CapacityPlanner_Sprint5.png)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Backlog_Sprint5.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Backlog_Sprint5.png)
 
 *Dates of sprint*: 26.12.2022 - 08.01.2023
 
@@ -232,7 +232,7 @@ What we commit to improve in the next sprint is dividing the tasks into sprints 
 
 *Burndown chart*:
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/BurndownChart_Sprint5.jpg)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/BurndownChart_Sprint5.jpg)
 
 *Retrospective Outcome*:
 - What went well in the sprint:
@@ -249,9 +249,9 @@ What we commit to improve during the next sprint is the testing of the flow and 
 
 - [Sprint 6](https://github.com/orgs/inginerie-software-22-23/projects/168): [Demo](https://drive.google.com/file/d/1tQ_7NWiqXdk2Lr4SstPvr-4j4wo1KebO/view)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/CapacityPlanner_Sprint6.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/CapacityPlanner_Sprint6.png)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Backlog_Sprint6.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Backlog_Sprint6.png)
 
 *Dates of sprint*: 09.01.2023 - 22.01.2023
 
@@ -280,7 +280,7 @@ What we commit to improve during the next sprint is the testing of the flow and 
 - Implemented Congratulations messages: Design, FE, BE, Testing
 - Implemented Snackbar Events: Design, FE, BE, Testing
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/BurndownChart_Sprint6.jpg)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/BurndownChart_Sprint6.jpg)
 
 - What went well in the sprint:
 
@@ -331,7 +331,7 @@ The team lacks some expertise as it is the first time working with certain techn
 
 ## **Roadmap**
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Roadmap.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Roadmap.png)
 
 ## **Definition of Ready (DoR)**
 
@@ -468,13 +468,13 @@ Inside the table, there are two arrays, one that contains the basic info (full n
 
 **Unit Testing**
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Unit_Testing_1.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Unit_Testing_1.png)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Unit_Testing_2.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Unit_Testing_2.png)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Unit_Testing_3.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Unit_Testing_3.png)
 
-![Images](https://github.com/inginerie-software-22-23/proiect-inginerie-software-nobugs4us/blob/main/Documentation%20Resources/Unit_Testing_4.png)
+![Images](https://github.com/rimihai2001/UpTask/tree/main/Documentation%20Resources/Unit_Testing_4.png)
 
 **Scalability Testing**
 
